@@ -7,16 +7,22 @@ import os
 import matplotlib.pyplot as plt
 
 
-def plot_predictions(y_test, predictions):
+def plot_predictions(y_test, predictions, save_path=None):
     plt.figure(figsize=(8, 6))
     plt.scatter(y_test, predictions, alpha=0.7, edgecolor='k')
     plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)
-    plt.xlabel('Actual values')
-    plt.ylabel('Preds')
-    plt.title('Actual vs Preds Target Severity Score')
+    plt.xlabel('Gerçek Değerler')
+    plt.ylabel('Tahmin Edilen Değerler')
+    plt.title('Gerçek vs. Tahmin Edilen Target Severity Score')
     plt.grid(True)
     plt.tight_layout()
-    plt.show()
+
+    if save_path:
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        plt.savefig(save_path)
+        print(f"🖼️ Grafik kaydedildi: {save_path}")
+    else:
+        plt.show()
 
 
 def train_model():
@@ -55,5 +61,5 @@ def train_model():
     print("✅ Fine-tuned model kaydedildi.")
 
     # Figure
-    plot_predictions(y_test, predictions)
+    plot_predictions(y_test, predictions, save_path="docs/real-vs-predicted.png")
 
