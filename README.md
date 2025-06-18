@@ -51,12 +51,11 @@ cancer_severity_model/
 ├── models/
 │ └── severity_model.pkl # Trained model
 │
-├── src/
-│ ├── preprocess.py # Data cleaning & encoding
-│ ├── train.py # Model training
-│ ├── predict.py # New prediction logic
+├── Preprocess.py # Data cleaning & encoding
+├── Train.py # Model training
+├── Predict.py # New prediction logic
 │
-├── main.py # End-to-end runner
+├── Main.py # End-to-end runner
 ├── requirements.txt # Python dependencies
 └── README.md
 
@@ -73,7 +72,7 @@ pip install -r requirements.txt
 2. Train the model
 
 ```bash
-python src/train.py
+python Train.py
 ```
 
 This will:
@@ -87,7 +86,7 @@ Plot prediction vs real score graph
 Edit the input inside main.py, then run:
 
 ```bash
-python main.py
+python Main.py
 ```
 
 Output:
