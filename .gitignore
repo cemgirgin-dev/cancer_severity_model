@@ -1,0 +1,22 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# IDE files
+.idea/
+*.iml
+
+# MacOS junk
+.DS_Store
+
+# Model artifacts
+models/*.pkl
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
